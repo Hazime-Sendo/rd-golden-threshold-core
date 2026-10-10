@@ -1,0 +1,21 @@
+{
+  "title": "Verification code for: Spectral classification of linearized reaction-diffusion systems with an adaptive golden-ratio threshold",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Sendo, Hazime",
+      "orcid": "0009-0007-3285-0308"
+    }
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "reaction-diffusion",
+    "spectral gap",
+    "lattice point counting",
+    "Gauss circle problem",
+    "golden ratio",
+    "reproducibility",
+    "numerical verification"
+  ],
+  "description": "Verification code for \"Spectral classification of linearized reaction–diffusion systems with an adaptive golden-ratio threshold\": reproduces every numerical statement and figure of the paper. Run `bash scripts/run_all.sh`; scripts/verify_all.py runs 44 checks (see results/logs/). Python (numpy, scipy, matplotlib). License: Apache-2.0."
+}
