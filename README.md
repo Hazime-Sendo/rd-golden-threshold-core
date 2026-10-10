@@ -58,4 +58,4 @@ Apache License 2.0 (see `LICENSE` and `NOTICE`). Copyright 2026 Hazime Sendo.
 
 ## Citation
 
-See `CITATION.cff`. The Zenodo DOI will be added here after the first release.
+See `CITATION.cff`. Archived on Zenodo: [doi:10.5281/zenodo.23274388](https://doi.org/10.5281/zenodo.23274388) (concept DOI, resolves to the latest version). Release v1.0.0: [doi:10.5281/zenodo.23274389](https://doi.org/10.5281/zenodo.23274389).
