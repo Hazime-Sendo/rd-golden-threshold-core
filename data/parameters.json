@@ -1,0 +1,34 @@
+{
+  "description": "Parameters of Table 1 of the manuscript (example (4)); phi = (1+sqrt 5)/2.",
+  "parameters": {
+    "d": 0.1,
+    "u_star": 1.618033988749895,
+    "b": 3.819660112501051,
+    "g": 2.618033988749895,
+    "h": 2.618033988749895,
+    "a0": 0.06,
+    "a1": 0.08,
+    "c1": 0.5,
+    "c2": 0.3
+  },
+  "closed_forms": {
+    "u_star": "phi",
+    "b": "20 - 10*phi",
+    "g": "phi^2",
+    "h": "phi^2"
+  },
+  "thresholds": {
+    "R": 2.618033988749895,
+    "delta": 4.23606797749979,
+    "closed_forms": {
+      "R": "phi^2",
+      "delta": "phi^3"
+    },
+    "equality_tolerance": 1e-09
+  },
+  "lattice_example": {
+    "d_closure_example": 0.002,
+    "N_closure_example": 256,
+    "expected_intermediate_modes": 68
+  }
+}

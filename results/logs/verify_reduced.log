@@ -1,0 +1,33 @@
+== 1. J(k): numeric vs analytic ==
+max |numeric - analytic| over k in [0,12]: 3.14e-10
+J(0) upper triangle max |.| = 0.0
+
+== 2. classification and crossings ==
+k=0.0:  [2.618034 2.618034 3.81966 ] ['visible', 'visible', 'intermediate']
+k=1.0:  [2.718034 2.718034 3.91966 ] ['intermediate', 'intermediate', 'intermediate']
+block u: b=3.819660  leaves 'visible' at k=0.0000, crosses delta at k=2.0406
+block v: b=2.618034  leaves 'visible' at k=0.0000, crosses delta at k=4.0225
+block w: b=2.618034  leaves 'visible' at k=0.0000, crosses delta at k=4.0225
+
+== 3. nonlinear return (uniform): nonlinear vs linearized trajectory ==
+v,w large (+50%,-30%)      init dist 0.1018  nonlinear/linear at t=(2.0, 4.0, 6.0, 8.0): 1.00000 1.00000 1.00000 1.00003   (last-step drift +2.7e-05)
+u large (+40%)             init dist 0.6472  nonlinear/linear at t=(2.0, 4.0, 6.0, 8.0): 0.73475 0.73220 0.73165 0.73153   (last-step drift -1.7e-04)
+all (+40%,+50%,-30%)       init dist 0.6552  nonlinear/linear at t=(2.0, 4.0, 6.0, 8.0): 0.67111 0.69515 0.71551 0.73184   (last-step drift +2.2e-02)
+u down (-60%)              init dist 0.9708  nonlinear/linear at t=(2.0, 4.0, 6.0, 8.0): 2.84732 2.87650 2.88658 2.88915   (last-step drift +8.9e-04)
+
+== 4. basin lower boundary in u ==
+u_2 = 0.344814  ->  f_crit = u_2/u* = 0.213107
+bisection boundary f = 0.213107
+upper side: f = 10, 100, 1000 diverge? [False, False, False]
+
+== 5. nonlinear 2D periodic PDE, spatial perturbation ==
+linear decay of mode (1,0): rates [3.01155 3.01155 4.21318]; k=0 slowest 2.61803
+small                      init dev 0.0012  nonlinear/linear(mode (1,0)) at t=2..6: 1.0000 1.0000 1.0000 1.0000 1.0001
+      mean component t=4: |m|=9.122e-12, |m|/|linear flow from t=3|=1.0000
+      mean component t=5: |m|=6.971e-13, |m|/|linear flow from t=3|=1.0002
+      mean component t=6: |m|=5.295e-14, |m|/|linear flow from t=3|=1.0000
+large (u,v,w +-30..50%)    init dev 0.4633  nonlinear/linear(mode (1,0)) at t=2..6: 1.3745 1.5565 1.8786 2.4094 3.2406
+      mean component t=4: |m|=1.660e-06, |m|/|linear flow from t=3|=1.0000
+      mean component t=5: |m|=1.269e-07, |m|/|linear flow from t=3|=1.0000
+      mean component t=6: |m|=9.639e-09, |m|/|linear flow from t=3|=1.0000
+large, w only              init dev 0.1122  nonlinear/linear(mode (1,0)) at t=2..6: 1.0000 1.0000 1.0000 1.0000 1.0000

@@ -1,0 +1,15 @@
+== Lemma 2: |rho - phi| <= |rho0 - phi| exp(-mu tau) ==
+ rho0= 0.05: max(|u|-bound) = 0.00e+00 (<=0), monotone: True, late rate 1.382050 vs mu(3-phi) = 1.381966
+ rho0= 0.50: max(|u|-bound) = 0.00e+00 (<=0), monotone: True, late rate 1.382039 vs mu(3-phi) = 1.381966
+ rho0= 1.00: max(|u|-bound) = 0.00e+00 (<=0), monotone: True, late rate 1.382012 vs mu(3-phi) = 1.381966
+ rho0= 3.00: max(|u|-bound) = 0.00e+00 (<=0), monotone: True, late rate 1.381826 vs mu(3-phi) = 1.381966
+ rho0=20.00: max(|u|-bound) = 0.00e+00 (<=0), monotone: True, late rate 1.378468 vs mu(3-phi) = 1.381966
+
+== Corollary: I_b(tau) = #{modes with R < lambda <= delta(tau)} ==
+ d=0.002, N=256: limit formula N2(t_delta) - N2(t_R) = 68, t_delta(inf) = 20.493
+ rho0=1.05: I_b at tau=[np.float64(0.0), np.float64(0.5), np.float64(1.0), np.float64(2.0), np.float64(3.0), np.float64(5.0), np.float64(8.0), np.float64(12.0), np.float64(20.0), np.float64(30.0)] -> [4, 36, 48, 60, 68, 68, 68, 68, 68, 68]; last change at tau = 2.54; final 68
+ rho0=1.2: I_b at tau=[np.float64(0.0), np.float64(0.5), np.float64(1.0), np.float64(2.0), np.float64(3.0), np.float64(5.0), np.float64(8.0), np.float64(12.0), np.float64(20.0), np.float64(30.0)] -> [20, 44, 56, 60, 68, 68, 68, 68, 68, 68]; last change at tau = 2.34; final 68
+ rho0=3.0: I_b at tau=[np.float64(0.0), np.float64(0.5), np.float64(1.0), np.float64(2.0), np.float64(3.0), np.float64(5.0), np.float64(8.0), np.float64(12.0), np.float64(20.0), np.float64(30.0)] -> [212, 144, 100, 68, 68, 68, 68, 68, 68, 68]; last change at tau = 1.80; final 68
+
+== Realization G' = mu (S + S^2/G - G), R = G/S ==
+ RK45: max |R' - mu(1 + 1/R - R)| = 2.49e-10  (central difference of the dense output, h=1e-6)

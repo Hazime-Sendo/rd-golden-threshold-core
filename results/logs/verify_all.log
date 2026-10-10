@@ -1,0 +1,61 @@
+== 6.1 Linear spectrum ==
+[PASS] J(k): numeric eigenvalues = b_j + d k^2  --  max error 3.14e-10
+[PASS] J(0) is lower triangular
+[PASS] classes at k=0: visible, visible, intermediate  --  ['visible', 'visible', 'intermediate']
+[PASS] classes at k=1: all intermediate  --  ['intermediate', 'intermediate', 'intermediate']
+[PASS] crossing of delta: k = 2.041 (u), 4.022 (v,w)  --  2.0406, 4.0225
+[PASS] Jordan block: eigenvalue -phi^2 has geometric multiplicity 1
+
+== 6.2 Theorem 1 (spectral gap) ==
+[PASS] 16|m|^2 <= Lambda_m <= 4 pi^2 |m|^2 for all tested N  --  violations 0
+[PASS] smallest decay rate = min_j b_j (1600 random draws)  --  mismatches 0
+
+== 6.2 Theorem 2 (counting; N chosen from N_0) ==
+[PASS] d=0.0002 block v: direct count = N2(t_delta)-N2(t_R) at N=1378 (N0 formula)  --  direct (V,I)=(1,640), formula (1,640), |I-main|=3.80 <= 66.7
+[PASS] d=0.0002 block u: direct count = N2(t_delta)-N2(t_R) at N=192 (N0 formula)  --  direct (V,I)=(0,169), formula (0,169), |I-main|=3.32 <= 35.4
+[PASS] d=0.002 block v: direct count = N2(t_delta)-N2(t_R) at N=56 (N0 formula)  --  direct (V,I)=(1,68), formula (1,68), |I-main|=3.62 <= 23.3
+[PASS] d=0.002 block u: direct count = N2(t_delta)-N2(t_R) at N=15 (N0 formula)  --  direct (V,I)=(0,21), formula (0,21), |I-main|=4.43 <= 13.3
+[PASS] d=0.02 block v: direct count = N2(t_delta)-N2(t_R) at N=7 (N0 formula)  --  direct (V,I)=(1,8), formula (1,8), |I-main|=1.56 <= 9.5
+[PASS] d=0.02 block u: direct count = N2(t_delta)-N2(t_R) at N=7 (N0 formula)  --  direct (V,I)=(0,1), formula (0,1), |I-main|=0.66 <= 6.4
+[PASS] d=2e-4, v-block: count at N=512 is still 656 (below N_0 = 1.4e3, Remark 2)  --  I=656
+[PASS] d=2e-4, v-block: counts 656, 640, 640 at N=1024, 2048, 3072; formula value 640  --  [656, 640, 640]
+[PASS] Section 6.6 example: t_delta = 20.49, eps = 0.507, N_0 = 54.7 (about 55)  --  N0 = 54.73
+
+== 6.2 Theorem 3 (data collapse) ==
+[PASS] median of T = 1; T_0.1 = 0.2901; T_0.9 = 1.7099; ratio 5.894  --  0.2901, 1.0000, 1.7099, 5.894
+[PASS] exact limit: G(1) = 1/2 (median of T)
+[PASS] T = 1 occurs at exactly 2(N-1) modes and #{T>1} = N^2/2 - (N-1) (N = 16..512)
+[PASS] sup_theta |G_N - G| = (N-1)/N^2 for N = 16..512 (same for all blocks); 0.0586 ... 0.0019  --  0.0586, 0.0303, 0.0154, 0.0078, 0.0039, 0.0019
+[PASS] block v (N=256): S_N(x) = 0 for x <= c/8; S_N(c/4) = 1/2 - (N-1)/N^2; x_50 = c/4 = 0.4045  --  S_N(c/4) = 0.49611
+[PASS] block u (N=256): S_N(x) = 0 for x <= c/8; S_N(c/4) = 1/2 - (N-1)/N^2; x_50 = c/4 = 0.1041  --  S_N(c/4) = 0.49611
+
+== 6.3 Nonlinear return, spatially uniform ==
+[PASS] v,w perturbation: distance at t=8 is 3e-11 (Table 4 note)  --  2.98e-11
+[PASS] v,w perturbation: nonlinear = linear (ratio 1)  --  [1.      1.      1.      1.00003]
+[PASS] u +40%: ratio changes by < 1e-3 (relative) between t=6 and t=8  --  [0.73475 0.7322  0.73165 0.73153]
+[PASS] u -60%: ratio changes by < 1e-3 (relative) between t=6 and t=8  --  [2.84732 2.8765  2.88658 2.88915]
+[PASS] all fields: ratio increases monotonically for t = 2..8 (Jordan block, slow)  --  [0.67111 0.69515 0.71551 0.73184]
+[PASS] t = 40 ratios: u+40% 0.7307, u-60% 2.903, all 0.813 (all: 0.732 -> 0.805 -> 0.813, still increasing)  --  {'u +40%': [0.7315, 0.7308, 0.7307], 'u -60%': [2.8892, 2.9008, 2.9026], 'all': [0.7318, 0.8046, 0.8128]}
+
+== 6.4 Nonlinear return on the 2D lattice (N=32, d=0.01) ==
+[PASS] linear rates of mode (1,0): 3.0116 (v,w) and 4.2132 (u)
+[PASS] small perturbation: ratio = 1 (t=2..6)  --  [1.     1.     1.     1.     1.0001]
+[PASS] large w-only perturbation: ratio = 1  --  [1. 1. 1. 1. 1.]
+[PASS] large u,v,w perturbation: ratio grows (slowest k=0 mode)  --  [1.374 1.557 1.879 2.409 3.241]
+[PASS] ... and the spatial mean follows the uniform linear flow (ratio 1)  --  [1. 1. 1.]
+
+== 6.5 Basin of attraction along u ==
+[PASS] bisection boundary = u_2/u_* = 0.213107  --  0.213107 vs 0.213107
+[PASS] no divergence for f = 10, 100, 1000
+
+== 6.6 Closure model and stabilization of the mode count ==
+[PASS] Lemma 2: |rho - phi| <= |rho_0 - phi| e^{-mu tau}
+[PASS] Lemma 2: rho is monotone
+[PASS] linear rate = mu (3 - phi) = 1.3820  --  [1.38205 1.38204 1.38201]
+[PASS] mu_1 = phi^2/(3-phi) = 1 + 2/sqrt(5); mu_2 = phi mu_1
+[PASS] Corollary 1: I(tau) constant for large tau, rho_0=1.05  --  final 68, formula 68, last change at tau = 2.54
+[PASS] Corollary 1: I(tau) constant for large tau, rho_0=1.2  --  final 68, formula 68, last change at tau = 2.34
+[PASS] Corollary 1: I(tau) constant for large tau, rho_0=3.0  --  final 68, formula 68, last change at tau = 1.80
+[PASS] realization G'=mu(S+S^2/G-G): R=G/S solves the closure ODE (residual of RK45 dense output)  --  max |R' - f(R)| = 2.49e-10
+
+44/44 checks passed
